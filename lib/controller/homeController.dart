@@ -16,9 +16,19 @@ import 'package:firebase_storage/firebase_storage.dart' as storage;
 class HomeController extends GetxController {
  var snapshot= FirebaseFirestore.instance.collection('imageurl').snapshots() ;
 
+ String? name  ;
+String? price  ;
+String? url ;
+String? desc ;
+
+setDataImage (gname , gprice , gurl, gdesc) {
+ name=gname ;
+ price=gprice ;
+ url=gurl ;
+ desc=gdesc ;
 
 
-
+}
 
 
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:morasel/binding/model/widget/stackItem.dart';
+import 'package:morasel/model/widget/stackItem.dart';
 import 'package:morasel/controller/homeController.dart';
 
 import 'package:transparent_image/transparent_image.dart';

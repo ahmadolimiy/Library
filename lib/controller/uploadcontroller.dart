@@ -13,7 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart'as firestroage ;
 
 
-import '../binding/model/screen/home.dart';
+import '../model/screen/home.dart';
 
 
 
@@ -23,11 +23,8 @@ class UploadController extends GetxController {
 int cheq=0 ;
   firestroage.FirebaseStorage storage = firestroage.FirebaseStorage.instance;
   File ? image;
-
   ImagePicker imagepiker = ImagePicker();
-
   var pikedimage;
-
   CollectionReference? imgref;
 
 

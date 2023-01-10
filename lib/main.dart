@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'binding/bind.dart';
-import 'binding/model/screen/home.dart';
+import 'model/screen/home.dart';
 
 void main() async {
 

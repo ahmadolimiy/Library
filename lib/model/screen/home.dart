@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:morasel/controller/homeController.dart';
 import 'package:morasel/controller/uploadcontroller.dart';
 
-import 'package:morasel/binding/model/screen/uploaditem.dart';
+import 'package:morasel/model/screen/uploaditem.dart';
 
 
 import 'package:transparent_image/transparent_image.dart';
