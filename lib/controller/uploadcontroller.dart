@@ -53,6 +53,10 @@ cheq=1 ;
     );
 
   }
+  deleteitem(String coll  ){
+    imgref?.doc(coll.toString()).delete() ;
+print('${coll.toString()}') ;
+  }
 
   @override
   void onInit() {

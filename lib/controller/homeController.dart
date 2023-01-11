@@ -20,12 +20,13 @@ class HomeController extends GetxController {
 String? price  ;
 String? url ;
 String? desc ;
-
-setDataImage (gname , gprice , gurl, gdesc) {
+ String? coll ;
+setDataImage (gname , gprice , gurl, gdesc, doc) {
  name=gname ;
  price=gprice ;
  url=gurl ;
  desc=gdesc ;
+ coll=doc ;
 
 
 }

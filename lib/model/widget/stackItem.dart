@@ -25,7 +25,7 @@ class StackItem extends StatelessWidget {
            onTap: (){
              //send the number collection
               controllerr.setDataImage(snapshot.data?.docs[index].get('name'), snapshot.data?.docs[index].get('price'),
-                  snapshot.data?.docs[index].get('url'), snapshot.data?.docs[index].get('desc'));
+                  snapshot.data?.docs[index].get('url'), snapshot.data?.docs[index].get('desc'),snapshot.data?.docs[index].id);
              Get.to(Itemetials()) ;
            },
            child: Stack(
