@@ -24,8 +24,27 @@ class Itemetials extends StatelessWidget {
       actions: [
         FloatingActionButton(
             onPressed: (){
-              controller.deleteitem(Hcontroller.coll.toString());
-              Get.offAll(Home(),binding: Bind()) ;
+              Get.dialog(
+                AlertDialog(
+
+                  title: const Text('حذف العنصر '),
+                  content: const Text('هل انت متاكد من حذف العنصر '),
+                  actions: [
+                    TextButton(
+                      child: const Text("الغاء"),
+                      onPressed: () => Get.back(),
+                    ),TextButton(
+                      child: const Text("نعم"),
+                      onPressed: () {
+                        controller.deleteitem(Hcontroller.coll.toString());
+                        Get.offAll(Home(),binding: Bind()) ;
+                      },
+                    ),
+                  ],
+                )
+
+              );
+
             },
             child: Icon(Icons.delete))
       ],),

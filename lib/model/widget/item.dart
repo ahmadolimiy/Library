@@ -5,13 +5,9 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:morasel/model/widget/stackItem.dart';
 import 'package:morasel/controller/homeController.dart';
-
 import 'package:transparent_image/transparent_image.dart';
 
-
-
 class Item extends StatelessWidget {
-
  // HomeController controller =Get.find<HomeController>() ;
   @override
   Widget build(BuildContext context) {
