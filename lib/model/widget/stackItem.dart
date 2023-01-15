@@ -15,20 +15,20 @@ class StackItem extends StatelessWidget {
   AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot ;
    StackItem( {required this.index, required this.snapshot, Key? key}) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
      return
-       Container(
-         padding: EdgeInsets.only(left: 4,right: 4),
-         child: InkWell(
-           onTap: (){
-             //send the number collection
-              controllerr.setDataImage(snapshot.data?.docs[index].get('name'), snapshot.data?.docs[index].get('price'),
-                  snapshot.data?.docs[index].get('url'), snapshot.data?.docs[index].get('desc'),snapshot.data?.docs[index].id);
-             Get.to(Itemetials()) ;
-           },
-           child: Stack(
+       Row(
+         children: [
+           Container(
+             child: InkWell(
+               onTap: (){
+                 //send the number collection
+                  controllerr.setDataImage(snapshot.data?.docs[index].get('name'), snapshot.data?.docs[index].get('price'),
+                      snapshot.data?.docs[index].get('url'), snapshot.data?.docs[index].get('desc'),snapshot.data?.docs[index].id);
+                 Get.to(const Itemetials()) ;
+               },
+               child: Stack(
     children: [
      ClipRRect(
 // clip the image to a circle
@@ -39,22 +39,27 @@ image: snapshot.data?.docs[index].get('url') ,
     fit: BoxFit.cover
 ),
 ) ,
-    Positioned(
-      left: 10,
-      child:  Text("${snapshot.data?.docs[index].get('price')} JD",
-      style: const TextStyle(color: Colors.white70, fontSize: 18,fontWeight: FontWeight.w700)),
-    ),
-     Positioned(
-    top: 17.0,
-    left: 16,
-    child: Text("${snapshot.data?.docs[index].get('name')}",
-    style: TextStyle(color: Colors.white, fontSize: 22)),
-    ),
-
     ],
-           //)
+               //)
     ),
-         ),
+             ),
+           ),
+           SizedBox(width: 100,),
+           Column(
+
+             children: [
+               SizedBox(height: 30,),
+               Container(
+                 child: Text("${snapshot.data?.docs[index].get('price')} JD",
+    style: const TextStyle(color: Colors.black, fontSize: 18,fontWeight: FontWeight.w700))) ,
+                     SizedBox(height: 20,),
+                       Container(
+                       child:Text("${snapshot.data?.docs[index].get('name')}",
+                           style: TextStyle(color: Colors.black, fontSize: 22)) ,
+                      ),
+             ],
+           )
+         ],
        ) ;
   }
 }

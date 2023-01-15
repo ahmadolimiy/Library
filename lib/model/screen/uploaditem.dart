@@ -10,9 +10,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:morasel/binding/bind.dart';
 import 'package:morasel/controller/homeController.dart';
 import 'package:get/get.dart';
 import 'package:morasel/controller/uploadcontroller.dart';
+
+import 'categeory.dart';
+import 'mydrawe.dart';
 
 
 class UploadItem extends StatelessWidget {
@@ -30,8 +34,9 @@ return  Scaffold (
   actions: [FloatingActionButton(
       onPressed: (){
 controller.uploaditem(itemPrice!,itemName!,desc!);
+Get.off(Categories(),binding: Bind()) ;
       },
-      child: Text('Done')),],
+      child:const Text('Done')),],
   ),
   body: SingleChildScrollView(
     child: Container(
@@ -45,13 +50,13 @@ controller.uploaditem(itemPrice!,itemName!,desc!);
       Container(
         padding: EdgeInsets.all(20),
         child:  TextField (
-          decoration: InputDecoration(
+          decoration:const InputDecoration(
 
             hintText: 'Add The Price',
             border: OutlineInputBorder(),
           ),
           onChanged: (price){
-            itemPrice=price   ;
+            itemPrice=price ;
           },
         ),
       ) ,
@@ -59,8 +64,7 @@ controller.uploaditem(itemPrice!,itemName!,desc!);
             padding: EdgeInsets.all(20),
             child:  TextField (
 
-              decoration: InputDecoration(
-
+              decoration:const InputDecoration(
                 hintText: 'Add The Name',
                 border: OutlineInputBorder(),
               ),
@@ -70,11 +74,10 @@ controller.uploaditem(itemPrice!,itemName!,desc!);
             ),
           ) ,
           Container(
-            padding: EdgeInsets.all(20),
+            padding:const EdgeInsets.all(20),
             child:  TextField (
-              decoration: InputDecoration(
-
-                hintText: 'Add The Describtion',
+              decoration:const InputDecoration(
+                hintText:'Add The Describtion',
                 border: OutlineInputBorder(),
               ),
               onChanged: (description){
@@ -87,7 +90,7 @@ controller.uploaditem(itemPrice!,itemName!,desc!);
             height: 150,
             width: 150,
             // there is problem here
-            child: cont.cheq==0? Text('Add the image') : Image.file(cont.image as File) ); })
+            child: cont.cheq==0?const Text('Add the image') : Image.file(cont.image as File) ); })
         ],
             ),
     ),

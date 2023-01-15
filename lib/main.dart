@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'binding/bind.dart';
-import 'model/screen/home.dart';
+import 'model/screen/categeory.dart';
+import 'model/screen/mydrawe.dart';
+import 'model/screen/splach.dart';
 
 void main() async {
 
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
       // theme: Colors.blue,
 initialRoute: '/',
  getPages: [
-   GetPage(name: '/', page: ()=>Home(), binding: Bind()) ,
+   GetPage(name: '/', page: ()=>splach(), binding: Bind()) ,
    // GetPage(name: 'addpic', page: null)       ,
  ],
     ) ;

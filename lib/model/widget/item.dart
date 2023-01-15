@@ -7,37 +7,46 @@ import 'package:morasel/model/widget/stackItem.dart';
 import 'package:morasel/controller/homeController.dart';
 import 'package:transparent_image/transparent_image.dart';
 
+import '../../controller/uploadcontroller.dart';
+
 class Item extends StatelessWidget {
- // HomeController controller =Get.find<HomeController>() ;
+  HomeController controller1 =Get.find<HomeController>() ;
+  UploadController controller = Get.find<UploadController>();
   @override
   Widget build(BuildContext context) {
-    return GetBuilder <HomeController>(
-      builder: (controller)=>
-       StreamBuilder(
-          stream: controller.snapshot ,
+    return
+      StreamBuilder(
+          stream: controller1.snapshot ,
           builder: (context,snapshot) {
             return
+              !snapshot.hasData ? CircularProgressIndicator():
+              ListView.builder(
+                itemCount: snapshot.data?.docs.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                        left: 37, right: 37, top: 20),
+                    child: Container(
+                      height: 120,
+                      width: 302,
+                      decoration: BoxDecoration(
+                        color: Color(0xFFF6F6F6),
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(25)),
+                      ),
+                      child: Padding(
+                          padding: const EdgeInsets.only(top: 0, left: 0),
+                          child:  StackItem(index: index, snapshot: snapshot,)
 
-              !snapshot.hasData ? Center(
-                child: CircularProgressIndicator(),
-              ) :
-            StaggeredGridView.
-            countBuilder(
-                staggeredTileBuilder: (index) =>
-                    StaggeredTile.count(1, index.isEven ? 1.2 : 1.6),
-                //cross axis cell count
-                mainAxisSpacing: 10,
-                // vertical spacing between items
-                crossAxisSpacing:8,
-                // horizontal spacing between items
-                crossAxisCount: 2,
-                // no. of virtual columns in grid
-                itemCount:  snapshot.data?.docs.length,
-                itemBuilder: (context, index) =>
-                    StackItem(index: index, snapshot: snapshot,)
+                        // style: GoogleFonts.oswald(
+                        //     fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                    ),
 
-            );
-          } ),
+                  );
+                },
+              );
+          } ,
     );
   }
 }

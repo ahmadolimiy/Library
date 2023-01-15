@@ -13,7 +13,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart'as firestroage ;
 
 
-import '../model/screen/home.dart';
+import '../model/screen/mydrawe.dart';
 
 
 
@@ -46,7 +46,7 @@ cheq=1 ;
       await ref?.getDownloadURL().then((value) {
          imgref?.add({'url': value,'price':price,'name':name,'desc':desc });
 
-        Get.off(Home()) ;
+
       }
       );
     }

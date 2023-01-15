@@ -1,10 +1,13 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:morasel/binding/bind.dart';
 import 'package:morasel/controller/homeController.dart';
 import 'package:morasel/controller/uploadcontroller.dart';
-import 'package:morasel/model/screen/home.dart';
+import 'package:morasel/model/screen/mydrawe.dart';
 import 'package:transparent_image/transparent_image.dart';
+
+import 'categeory.dart';
 
 
 
@@ -37,7 +40,7 @@ class Itemetials extends StatelessWidget {
                       child: const Text("نعم"),
                       onPressed: () {
                         controller.deleteitem(Hcontroller.coll.toString());
-                        Get.offAll(Home(),binding: Bind()) ;
+                        Get.offAll(Categories(),binding: Bind()) ;
                       },
                     ),
                   ],

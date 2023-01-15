@@ -37,7 +37,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       IconButton(
                         alignment: Alignment.topRight,
                         onPressed: () {
-                          Navigator.pop(context);
+                          Get.off(Categories());
                         },
                         icon: Icon(Icons.close),
                         color: Colors.white,
@@ -59,22 +59,14 @@ class _MyDrawerState extends State<MyDrawer> {
                        )
                     )),
                     SizedBox(width: 10),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('العليمي',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20),),
-                          // style: GoogleFonts.oswald(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 24,color: Color(0xffFFFFFF)),),
-                         // Text('California',style: GoogleFonts.openSans(fontStyle: FontStyle.normal,fontWeight: FontWeight.w400,fontSize: 14,color: Color(0xffF2F2F2)),),
-                        ],
-                      ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: Text('العليمي',style: TextStyle(fontWeight: FontWeight.w700,fontSize: 20),),
                     ),
 
                   ],
                 ),
-                SizedBox(height: 70),
+              const  SizedBox(height: 70),
                 const Divider(
                   thickness: 2.2,
                   color: Color(0xffFFFFFF),
@@ -90,7 +82,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
                           //Navigator.of(context).pushNamed(ProductDetail.routeName);
                         },
-                        child: ListTile(
+                        child:const ListTile(
                           title: Text('Shop'),
                         ),
                       ),
@@ -101,12 +93,12 @@ class _MyDrawerState extends State<MyDrawer> {
                           Get.offAll(Categories(),binding:Bind()) ;
 
                         },
-                        child: ListTile(
+                        child:const ListTile(
                           title: Text('Categories'),
                         ),
                       ),
-                      ListTile(
-                       title: Text('My Cart'),
+                     const ListTile(
+                       title:  Text('My Cart'),
                       ),
                       ListTile(
                         title: Text('Wishlist'),
